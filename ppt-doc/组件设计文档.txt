@@ -1,0 +1,7 @@
+首页home：
+	1.header{
+	       search-box{
+	          span  input  div
+	       }	
+	   }
+		
