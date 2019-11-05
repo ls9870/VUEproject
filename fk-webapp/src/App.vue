@@ -1,27 +1,33 @@
 <template>
   <div id="app">
-<!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
+    <ho></ho>
   </div>
 </template>
-
 <script>
-import Home from './view/Home.vue'
-
+import ho from './view/home.vue'
 export default {
   name: 'app',
   components: {
-    Home
+    ho
   }
 }
 </script>
-
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  body,ul,ol,dl,dd,p,h1,h2,h3,h4,h5,h6,input,textarea,hr,div,em,strong{
+    margin:0;
+    padding:0;
+  }
+  html{
+    font-size: 26.67vw;
+  }
+  body{
+    font-size: 0.14rem;
+     width: 100%;
+  }
+  a{
+    text-decoration: none;
+  }
+  img{
+    border: none;
+  }
 </style>
