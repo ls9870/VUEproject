@@ -1,14 +1,20 @@
 <template>
   <div id="app">
-    <ho></ho>
+<!--    <Home></Home>-->
+<!--    <Classify></Classify>-->
+<!--    //路由插槽只写这个-->
+    <router-view></router-view>
   </div>
 </template>
 <script>
-import ho from './view/home.vue'
+// import Home from './view/home.vue'
+// import Classify from './view/classify.vue'
+
 export default {
   name: 'app',
   components: {
-    ho
+    // Home,
+    // Classify
   }
 }
 </script>

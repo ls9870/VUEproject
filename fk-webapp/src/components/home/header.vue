@@ -2,7 +2,7 @@
   <div class="box-search">
     <div class="search">
       <a href="">
-        <img src="../../assets/home/search2.png">
+        <img src="../../assets/home/search2.jpg">
       </a>
       <input type="text" name="search" id="search" value="熊本熊"/>
       <div class="mas">

@@ -1,10 +1,14 @@
 <template>
-    <div id="home">
+    <div id="home" >
       <Header></Header>
       <Lunbo></Lunbo>
       <Tnav></Tnav>
       <Xpin></Xpin>
       <MiaoS></MiaoS>
+      <you-xuan></you-xuan>
+      <Yp2></Yp2>
+
+      <Db></Db>
       <Footer></Footer>
     </div>
 </template>
@@ -14,7 +18,10 @@ import Lunbo from '../components/home/lunbo.vue'
 import Tnav from '../components/home/top-nav.vue'
 import Xpin from '../components/home/xinping.vue'
 import MiaoS from '../components/home/miaosha.vue'
-import Footer from '../components/home/footer.vue'
+import Footer from '../components/common/footer.vue'
+import YouXuan from '../components/home/youxuan1.vue'
+import Db from '../components/home/dibu.vue'
+import Yp2 from '../components/home/youping2'
 
 export default {
   name: "home",
@@ -24,8 +31,10 @@ export default {
     Tnav,
     Xpin,
     MiaoS,
+    YouXuan,
+    Yp2,
 
-
+    Db,
     Footer
   }
 }
