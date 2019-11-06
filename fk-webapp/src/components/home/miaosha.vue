@@ -5,16 +5,41 @@
         <p>每日秒杀</p>
         <p style="font-size: 0.096rem;line-height: 0.2rem;color: #ADADAD;">| 15点场</p>
       </div>
-      <a href="" >
-        <img src="../../assets/home/miaosha/6385374-1j201903271435312940.jpg"/>
-        <p class="text1">充值后￥69 <span><s>￥198</s></span></p>
-      </a>
+      <swiper class='swiper-box' :options="swiperOption" ref="mySwiper" >
+        <swiper-slide ><img src="../../assets/home/miaosha/6375351-1j201611011617463143.jpg" style=" width: 0.97rem;height: 1.25rem;"></swiper-slide>
+        <swiper-slide><img src="../../assets/home/miaosha/6378401-1j201801111409218163.jpg" style=" width: 0.97rem;height: 1.25rem;"></swiper-slide>
+        <swiper-slide><img src="../../assets/home/miaosha/6385374-1j201903271435312940.jpg" style=" width: 0.97rem;height: 1.25rem;"></swiper-slide>
+        <swiper-slide><img src="../../assets/home/miaosha/6385381-1j201903271435214188.jpg" style=" width: 0.97rem;height: 1.25rem;"></swiper-slide>
+        <swiper-slide><img src="../../assets/home/miaosha/6385391-1j201903271435462944.jpg" style=" width: 0.97rem;height: 1.25rem;"></swiper-slide>
+        <swiper-slide><img src="../../assets/home/miaosha/6385459-1j201904241040200382.jpg" style=" width: 0.97rem;height: 1.25rem;"></swiper-slide>
+        <swiper-slide><img src="../../assets/home/miaosha/6386636-1j201910091715436776.jpg" style=" width: 0.97rem;height: 1.25rem;"></swiper-slide>
+        <swiper-slide><img src="../../assets/home/miaosha/gen.jpg" style=" ;height: 1.25rem;"></swiper-slide>
+      </swiper>
     </div>
 </template>
 
 <script>
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
-    name: "miaosha"
+    name: "miaosha",
+    components: {
+      swiper,
+      swiperSlide
+    },
+    data(){
+      return{
+        swiperOption: {
+          slidesPerView : 3, // 设置slider容器能够同时显示的3个slides。
+          slidesPerGroup : 1, // 设置slides的数量ji个为一组。
+          // spaceBetween : , // 设置slide间的间距
+        },
+      }
+    },
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper.swiper;
+    }
+  }
 }
 </script>
 
@@ -38,8 +63,8 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
   }
-  a>img{
-    width: 0.97rem;
-    height: 1.25rem;
-  }
+  /*a>img{*/
+  /*  width: 0.97rem;*/
+  /*  height: 1.25rem;*/
+  /*}*/
 </style>

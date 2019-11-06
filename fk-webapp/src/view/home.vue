@@ -7,7 +7,7 @@
       <MiaoS></MiaoS>
       <you-xuan></you-xuan>
       <Yp2></Yp2>
-
+      <Yp3></Yp3>
       <Db></Db>
       <Footer></Footer>
     </div>
@@ -22,6 +22,7 @@ import Footer from '../components/common/footer.vue'
 import YouXuan from '../components/home/youxuan1.vue'
 import Db from '../components/home/dibu.vue'
 import Yp2 from '../components/home/youping2'
+import Yp3 from '../components/home/youxuan3'
 
 export default {
   name: "home",
@@ -33,7 +34,7 @@ export default {
     MiaoS,
     YouXuan,
     Yp2,
-
+    Yp3,
     Db,
     Footer
   }

@@ -33,6 +33,7 @@ export default {
       display: flex;
       justify-content: space-around;
       background-color: #FFFFFF;
+      z-index: 999;
     }
     .foot-a{
       display: inline-block;

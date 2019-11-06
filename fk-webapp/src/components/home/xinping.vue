@@ -4,26 +4,52 @@
         <img src="../../assets/home/xinping/6.jpg"/>
         <p>新品上新</p>
       </div>
-      <a href="" >
-        <img src="../../assets/home/xinping/1.jpg" class="lb"/>
-      </a>
+<!--      <a href="" >-->
+        <swiper class='swiper-box' :options="swiperOption" ref="mySwiper" >
+          <!--          <div class="box">-->
+          <swiper-slide ><img src="../../assets/home/xinping/1.jpg" style=" width: 1.6rem;height: 1rem;"></swiper-slide>
+          <swiper-slide><img src="../../assets/home/xinping/2.jpg" style=" width: 1.6rem;height: 1rem;"></swiper-slide>
+          <swiper-slide><img src="../../assets/home/xinping/3.jpg" style=" width: 1.6rem;height: 1rem;"></swiper-slide>
+          <swiper-slide><img src="../../assets/home/xinping/4.jpg" style=" width: 1.6rem;height: 1rem;"></swiper-slide>
+          <swiper-slide><img src="../../assets/home/xinping/5.jpg" style=" width: 1.6rem;height: 1rem;"></swiper-slide>
+          <swiper-slide><img src="../../assets/home/xinping/7.jpg" style=" width: 1.6rem;height: 1rem;"></swiper-slide>
+          <swiper-slide><img src="../../assets/home/xinping/8.jpg" style=" width: 1.6rem;height: 1rem;"></swiper-slide>
+          <swiper-slide><img src="../../assets/home/xinping/9.jpg" style=" width: 1.6rem;height: 1rem;"></swiper-slide>
+          <swiper-slide><img src="../../assets/home/xinping/10.jpg" style=" width: 1.6rem;height: 1rem;"></swiper-slide>
+          <swiper-slide><img src="../../assets/home/xinping/11.jpg" style=" width: 1.6rem;height: 1rem;"></swiper-slide>
+          <swiper-slide><img src="../../assets/home/xinping/12.jpg" style=" width: 1.6rem;height: 1rem;"></swiper-slide>
+        </swiper>
+             <!-- 分页器 -->
+<!--        <div class="swiper-pagination"></div>-->
+<!--      </a>-->
     </div>
 </template>
 <script>
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
-    name: "xinping",
-    // data( ){
-    //   return{
-    //     list:[{
-    //       'img':'../../assets/home/xinping/1.jpg'
-    //     },
-    //     {
-    //       'img':'../../assets/home/xinping/2.jpg'
-    //     }
-    //
-    //     ]
-    //   }
-    // }
+  name: 'xinping',
+  components: {
+    swiper,
+    swiperSlide
+  },
+  data(){
+    return{
+      swiperOption: {
+        pagination: {
+          el: '.swiper-pagination',
+          dynamicBullets: true
+        },
+        slidesPerView : 3, // 设置slider容器能够同时显示的3个slides。
+        slidesPerGroup : 1, // 设置slides的数量ji个为一组。
+        spaceBetween : 127, // 设置slide间的间距
+      },
+    }
+  },
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper.swiper;
+    }
+  }
 }
 </script>
 
@@ -43,9 +69,5 @@ export default {
   }
   a{
     height: 0.8rem;
-  }
-  .lb{
-    width: 1.6rem;
-    height: 1rem;
   }
 </style>

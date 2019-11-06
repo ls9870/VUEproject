@@ -10,15 +10,45 @@
         </a>
 <!--      fenye-->
         <div class="fen">
-          <a href="" >
-            <img src="../../assets/home/youxuan/1-1.jpg" class="f">
-          </a>
+          <swiper class='swiper-box' :options="swiperOption" ref="mySwiper" >
+            <swiper-slide ><img src="../../assets/home/youxuan/1-1.jpg" style=" width: 1.32rem;height: 1.75rem;"></swiper-slide>
+            <swiper-slide><img src="../../assets/home/youxuan/1-2.jpg" style="  width: 1.32rem;height: 1.75rem;"></swiper-slide>
+            <swiper-slide><img src="../../assets/home/youxuan/1-3.jpg" style="  width: 1.32rem;height: 1.75rem;"></swiper-slide>
+            <swiper-slide><img src="../../assets/home/youxuan/1-5.jpg" style="  width: 1.32rem;height: 1.75rem;"></swiper-slide>
+            <swiper-slide><img src="../../assets/home/youxuan/1-6.jpg" style="  width: 1.32rem;height: 1.75rem;"></swiper-slide>
+            <swiper-slide><img src="../../assets/home/youxuan/1-7.jpg" style="  width: 1.32rem;height: 1.75rem;"></swiper-slide>
+            <swiper-slide><img src="../../assets/home/youxuan/1-8.jpg" style="  width: 1.32rem;height: 1.75rem;"></swiper-slide>
+            <swiper-slide><img src="../../assets/home/youxuan/g.jpg" style="  width: 1rem;height: 1.75rem;"></swiper-slide>
+          </swiper>
         </div>
     </div>
 </template>
 <script>
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
-    name: "youxuan"
+  name: "youxuan",
+  components: {
+    swiper,
+    swiperSlide
+  },
+  data(){
+    return{
+      swiperOption: {
+        pagination: {
+          el: '.swiper-pagination',
+          dynamicBullets: true
+        },
+        slidesPerView : 3,
+        slidesPerGroup : 1,
+        spaceBetween : 60,
+      },
+    }
+  },
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper.swiper;
+    }
+  }
 }
 </script>
 
@@ -56,8 +86,8 @@ export default {
     .fen{
       padding: 0.113rem;
     }
-    .f{
-      width: 1.32rem;
-      height: 1.75rem;
-    }
+    /*.f{*/
+    /*  width: 1.32rem;*/
+    /*  height: 1.75rem;*/
+    /*}*/
 </style>
