@@ -8,7 +8,7 @@ Vue.use(VueRouter)
 let router = new VueRouter({
     routes:[
         { path:'/',component: Home },
-        { path:'/fenlei',component: Classify }
+        { path:'/classify',component: Classify }
     ]
 })
 

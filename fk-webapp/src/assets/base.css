@@ -1,0 +1,16 @@
+.nav{
+    height: 0.45rem;
+    background-color: #B81C22;
+    display: flex;
+}
+.go{
+    width: 0.4rem;
+    height: 0.4rem;
+    margin-left: 0.1rem;
+}
+p{
+    font-size: 0.168rem;
+    color: #ffffff;
+    line-height: 0.45rem;
+    margin-left: 1.2rem;
+}

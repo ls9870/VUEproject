@@ -50,10 +50,13 @@ export default {
   .xp-tu1{
     display: flex;
     justify-content: flex-start;
-    padding: 0.112rem;
+    padding-left: 0.112rem;
+    align-items: center;
   }
   p{
     margin-left:  0.1rem;
+    color: black;
+    font-size: 0.146rem;
   }
   .xp-tu1 span{
     width: 0.14rem;

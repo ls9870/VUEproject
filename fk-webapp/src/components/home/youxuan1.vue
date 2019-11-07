@@ -56,11 +56,14 @@ export default {
     .xp-tu1{
       display: flex;
       justify-content: flex-start;
-      padding: 0.112rem;
       background-color: #FAFAFA;
+      align-items: center;
+      padding-left: 0.112rem;
     }
     p{
       margin-left:  0.1rem;
+      color: black;
+      font-size: 0.146rem;
     }
     .xp-tu1 img{
       width: 0.14rem;

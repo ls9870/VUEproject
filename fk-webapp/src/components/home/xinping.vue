@@ -2,7 +2,7 @@
     <div class="xinping">
       <div class="xp-tu1">
         <img src="../../assets/home/xinping/6.jpg"/>
-        <p>新品上新</p>
+        <p v-for="n in mas" >{{n}}</p>
       </div>
 <!--      <a href="" >-->
         <swiper class='swiper-box' :options="swiperOption" ref="mySwiper" >
@@ -34,6 +34,7 @@ export default {
   },
   data(){
     return{
+      mas:['新品上新'],
       swiperOption: {
         pagination: {
           el: '.swiper-pagination',
@@ -57,11 +58,14 @@ export default {
   .xp-tu1{
     display: flex;
     justify-content: flex-start;
-    padding: 0.112rem;
+    padding-left: 0.112rem;
     background-color: #FAFAFA;
+    align-items: center;
   }
   p{
     margin-left:  0.1rem;
+    color: black;
+    font-size: 0.146rem;
   }
   .xp-tu1 img{
     width: 0.14rem;

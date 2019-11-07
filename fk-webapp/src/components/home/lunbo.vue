@@ -8,39 +8,11 @@
             <swiper-slide><img src="../../assets/home/lunbo/4.jpg" ></swiper-slide>
             <swiper-slide><img src="../../assets/home/lunbo/5.jpg" ></swiper-slide>
             <swiper-slide><img src="../../assets/home/lunbo/2.jpg" ></swiper-slide>
-          <!--          </div>-->
-<!--          <div class="swiper-pagination"  slot="pagination"></div>-->
-<!--          <div class="swiper-button-prev" slot="button-prev"></div>-->
-<!--          <div class="swiper-button-next" slot="button-next"></div>-->
-<!--          <div class="swiper-scrollbar"   slot="scrollbar"></div>-->
         </swiper>
     </div>
 </template>
-<!--<script>-->
-<!--export default {-->
-<!--  name: "lunbo",-->
-<!--  data(){-->
-<!--    return{-->
-<!--      swiperOption:{-->
-<!--      }-->
-<!--    }-->
-<!--  },-->
-<!--  computed: {-->
-<!--    swiper() {-->
-<!--      return this.$refs.mySwiper.swiper-->
-<!--    }-->
-<!--  },-->
-<!--  mounted(){-->
-<!--    // setInterval(this.autoPlay,1000);-->
-<!--  },-->
-<!--  autoplay: {-->
-<!--    disableOnInteraction: false, //手动滑动之后不打断播放-->
-<!--    delay: 2000-->
-<!--  }-->
-<!--}-->
-<!--</script>-->
 <script >
-// import '../../../node_modules/vue-awesome-swiper/node_modules/swiper/dist/css/swiper.css'样式引入
+// import '../../../node_modules/vue-awesome-swiper/node_modules/swiper/dist/css/swiper.css'样式引入imdex.html也可以
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
   name: 'lunbo',

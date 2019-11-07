@@ -48,22 +48,22 @@ export default {
       margin: 0 auto;
     }
     .in1{
-      background-image: url("../../assets/home/footer/in.png");
+      background-image: url("../../assets/footer/in.png");
     }
     .in2{
-      background-image: url("../../assets/home/footer/in.png");
+      background-image: url("../../assets/footer/in.png");
       background-position: 0 -43px;
     }
     .in3{
-      background-image: url("../../assets/home/footer/in.png");
+      background-image: url("../../assets/footer/in.png");
       background-position: 0 -91px;
     }
     .in4{
-      background-image: url("../../assets/home/footer/in.png");
+      background-image: url("../../assets/footer/in.png");
       background-position: 0 -136px;
     }
     .in5{
-      background-image: url("../../assets/home/footer/in.png");
+      background-image: url("../../assets/footer/in.png");
       background-position: 0 -180px;
     }
 </style>

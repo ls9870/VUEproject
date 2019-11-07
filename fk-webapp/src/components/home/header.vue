@@ -2,7 +2,9 @@
   <div class="box-search">
     <div class="search">
       <a href="">
-        <img src="../../assets/home/search2.jpg">
+<!--        <img src="../../assets/home/search2.jpg">-->
+        <div class="ser"></div>
+        <img :src="pic">
       </a>
       <input type="text" name="search" id="search" value="熊本熊"/>
       <div class="mas">
@@ -13,7 +15,12 @@
 </template>
 <script>
 export default {
-    name: "box-search"
+    name: "box-search",
+    data:  function(){
+      return{
+        'pic': 'http://47.94.86.251/%E5%87%A1%E5%AE%A2Vancl/search2.jpg'
+      }
+    }
 }
 </script>
 
@@ -43,6 +50,7 @@ export default {
     position: absolute;
     top: 0.15rem;
     left: 0.2rem;
+    z-index: 88;
   }
   .mas{
     width: 0.22rem;

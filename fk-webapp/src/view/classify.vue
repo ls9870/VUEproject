@@ -1,15 +1,17 @@
 <template>
-    <div class="classify"></div>
-    <Top></Top>
+    <div class="classify">
+      <Top></Top>
+    </div>
 </template>
 
 <script>
 import Top from '../components/classify/top'
 
+
 export default {
     name: "classify",
     components:{
-      Top
+      Top,
     }
 }
 </script>

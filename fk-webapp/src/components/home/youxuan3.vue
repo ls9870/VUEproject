@@ -2,7 +2,7 @@
     <div class="youxuan3">
       <div class="xp-tu1">
         <img src="../../assets/home/youxuan/tu1.jpg"/>
-        <p>优选推荐</p>
+        <p>优推</p>
       </div>
       <a href="" class="datu">
         <img src="../../assets/home/youxuan3/1-20.jpg" class="yx1"/>
@@ -57,11 +57,14 @@ export default {
   .xp-tu1{
     display: flex;
     justify-content: flex-start;
-    padding: 0.112rem;
+    padding-left: 0.112rem;
     background-color: #FAFAFA;
+    align-items: center;
   }
   p{
     margin-left:  0.1rem;
+    color: black;
+    font-size: 0.146rem;
   }
   .xp-tu1 img{
     width: 0.14rem;
