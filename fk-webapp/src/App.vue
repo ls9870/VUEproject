@@ -2,19 +2,26 @@
   <div id="app">
 <!--    <Home></Home>-->
 <!--    <Classify></Classify>-->
+<!--        <pin></pin>-->
 <!--    //路由插槽只写这个-->
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 <script>
 // import Home from './view/home.vue'
 // import Classify from './view/classify.vue'
+// import pin from './view/pindao'
+// import pin from './view/me'
+
 
 export default {
   name: 'app',
   components: {
     // Home,
     // Classify
+    // pin
   }
 }
 </script>

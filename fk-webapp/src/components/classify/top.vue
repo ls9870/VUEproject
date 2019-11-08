@@ -2,16 +2,14 @@
     <div class="top">
       <div class="nav">
         <img src='../../assets/classify/go.jpg' @click="go" class="go">
-        <p >分类</p>
+        <p style=" margin-left: 1.2rem;">分类</p>
       </div>
       <div class="box">
         <div  class="cebian-nav">
-          <span :key="i" v-for= "(n,i) in list" @click="chg(i)" :class="{active:i === isActive}" >{{n}}{{i}}</span>
+          <span :key="i" v-for= "(n,i) in list" @click="chg(i)" :class="{active:i === isActive}" >{{n}}</span>
         </div>
 <!--        //youbain右边-->
-<!--        <Tui @sendMessage="getMess"></Tui>-->
-          <Tui v-show="i=1"></Tui>
-
+          <MC ></MC>
 
       </div>
       <Footer></Footer>
@@ -20,13 +18,13 @@
 
 <script>
 import Footer from '../common/footer'
-import Tui from './tuijian'
+import MC from './mancloth'
 
 export default {
     name: "top",
     components:{
       Footer,
-      Tui
+      MC
     },
    data(){
       return{
@@ -39,23 +37,15 @@ export default {
         this.$router.push({path:'/'})
       },
       chg(i){
-        // this.color = 'color:#CC0000; background-color:#ffffff;'
         this.isActive=i;
       },
-      // getMess(){
-      //   if (i=0) {
-      //     this.style='display:none'
-      //   }
-      // }
     }
 }
 </script>
 
-<!--Add "scoped" attribute to limit CSS to this component only-->
 <style scoped>
   @import '../../assets/base.css';
   .box{
-    /*background-color: #E5E5E5;*/
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.5rem;

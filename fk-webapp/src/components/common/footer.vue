@@ -1,25 +1,42 @@
 <template>
     <div class="foot">
-      <a href="" class="foot-a">
+      <div class="foot-a" @click="go1">
         <div class="in1"></div>
-      </a>
-      <a href="" class="foot-a">
+      </div>
+      <div class="foot-a" @click="go2">
         <div class="in2"></div>
-      </a>
-      <a href="" class="foot-a">
+      </div>
+      <div  class="foot-a" @click="go3">
         <div class="in3"></div>
-      </a>
-      <a href="" class="foot-a">
+      </div>
+      <div class="foot-a" @click="go4">
         <div class="in4"></div>
-      </a>
-      <a href="" class="foot-a">
+      </div>
+      <div class="foot-a" @click="go5">
         <div class="in5"></div>
-      </a>
+      </div>
     </div>
 </template>
 <script>
 export default {
-    name: "foot"
+    name: "foot",
+    methods:{
+      go1(){
+        this.$router.push({path:'/'})
+      },
+      go2(){
+        this.$router.push({path:'/classify'})
+      },
+      go3(){
+        this.$router.push({path:'/hbo'})
+      },
+      go4(){
+        this.$router.push({path:'/'})
+      },
+      go5(){
+        this.$router.push({path:'/me'})
+      }
+    }
 }
 </script>
 

@@ -7,7 +7,6 @@
 <script>
 import Top from '../components/classify/top'
 
-
 export default {
     name: "classify",
     components:{
