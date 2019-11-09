@@ -10,10 +10,10 @@
         </div>
         <div class="d2">
           <a href="">
-            <div class="d2a">登录</div>
+            <div class="d2a" @click="go1">登录</div>
           </a>
           <a href="#">
-            <div class="d2b">注册</div>
+            <div class="d2b" @click="go2">注册</div>
           </a>
         </div>
         <div class="d3">
@@ -39,7 +39,15 @@
 
 <script>
 export default {
-    name: "dibu"
+    name: "dibu",
+    methods:{
+      go1(){
+        this.$router.push({path:'/Me'})
+      },
+      go2(){
+        this.$router.push({path:'/login'})
+      }
+    }
 }
 </script>
 

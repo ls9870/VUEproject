@@ -2,8 +2,8 @@
     <div class="enter">
 <!--      内容-->
       <div class="con" >
-          <div @click='flage=true' class="pu" >普通登录</div>
-          <div @click='flage=false' class="kuai">快速登录</div>
+          <div @click='flage=true' class="pu" v-on:click="sty" :style="color">普通登录</div>
+          <div @click='flage=false' class="kuai" v-on:click="stye" :style="colore">快速登录</div>
       </div>
 <!--      普通-->
       <div class="in6" v-if="flage">
@@ -37,6 +37,8 @@ export default {
     data(){
       return{
         flage:true,
+        color:'border-bottom: 0.03rem solid #B81B22',
+        colore:'border:none'
       }
     },
     components:{
@@ -45,18 +47,20 @@ export default {
     methods:{
       goh(){
         this.$router.push({path:'/'})
-      }
+      },
+      sty(){
+        this.color=' border-bottom: 0.03rem solid #B81B22'
+        this.colore=' border-bottom: none'
+      },
+      stye(){
+        this.colore=' border-bottom: 0.03rem solid #B81B22'
+        this.color=' border-bottom: none'
+      },
     }
 }
 </script>
 
 <style scoped>
-  .pu{
-    border-bottom: 0.03rem solid #B81B22;
-  }
-  .kuai{
-    border-bottom: 0.03rem solid #B81B22;
-  }
   .con{
     display: flex;
     justify-content: space-around;
@@ -73,12 +77,13 @@ export default {
   }
   .in6>input{
     width: 100%;
-    padding: 0.09rem 0.1rem 0.09rem  0.1rem;
+    padding: 0.1rem 0.1rem 0.1rem  0.1rem;
     box-sizing: border-box;  /**********改变box计算互不影响*******/
     background-color: #F5F5F5;
     outline: none;
     border: none;
     color: #757575;
+    line-height: 0.2rem;
   }
   .name1{
     margin: 0.1rem 0;
@@ -133,5 +138,6 @@ export default {
     outline: none;
     border: none;
     color: #757575;
+    line-height: 0.22rem;
   }
 </style>

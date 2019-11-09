@@ -31,7 +31,7 @@ export default {
         this.$router.push({path:'/hbo'})
       },
       go4(){
-        this.$router.push({path:'/'})
+        this.$router.push({path:'/goshopping'})
       },
       go5(){
         this.$router.push({path:'/me'})

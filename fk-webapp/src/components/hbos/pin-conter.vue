@@ -41,4 +41,7 @@ export default {
     height: 2.345rem;
     margin: 0.03rem 0 -0.002rem 0;
   }
+  .pin-content{
+    margin-bottom: 0.5rem;
+  }
 </style>

@@ -1,8 +1,8 @@
 <template>
     <div class="me-footer">
         <div class="goo">
-            <div class="zhuce">免费注册<span>></span> </div>
-            <div class="wangji">手机账号取回密码<span> ></span></div>
+            <div class="zhuce" @click="zu">免费注册<span>></span> </div>
+            <div class="wangji" @click="re">手机账号取回密码<span> ></span></div>
         </div>
         <div class="other">
             <div>使用其他账号登录</div>
@@ -13,7 +13,15 @@
 
 <script>
 export default {
-    name: "me-footer"
+    name: "me-footer",
+    methods:{
+        zu(){
+          this.$router.push({ path:'/login'})
+        },
+        re(){
+          this.$router.push({path:'/reset'})
+        }
+    }
 }
 </script>
 
