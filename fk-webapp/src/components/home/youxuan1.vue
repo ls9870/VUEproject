@@ -2,10 +2,10 @@
     <div class="youxuan">
        <div class="xp-tu1">
           <img src="../../assets/home/youxuan/tu1.jpg"/>
-          <p>优选推荐</p>
+          <p >优选推荐</p>
         </div>
         <a href="" class="datu">
-          <img src="../../assets/home/youxuan/1-20.jpg" class="yx1"/>
+          <img src="../../assets/home/youxuan/1-20.jpg" class="yx1" />
           <img src="../../assets/home/s.jpg" class="jiao2"/>
         </a>
 <!--      fenye-->
@@ -48,7 +48,7 @@ export default {
     swiper() {
       return this.$refs.mySwiper.swiper;
     }
-  }
+  },
 }
 </script>
 

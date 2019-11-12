@@ -9,8 +9,25 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+//安装vuex
+// Vue.use(Vuex)
+// var store = new Vuex.store({
+//   state: {//this.$store.state
+//
+//   },
+//   mutations:{//this.$store.commit('方法名称'，‘按需传递唯一的参数)
+//
+//   },
+//   getters:{
+//
+//   }
+// })
+
 new Vue({
   router,
+  // store, //挂载
   render: h => h(App),
 }).$mount('#app')
+
+import Vuex from 'vuex'
 

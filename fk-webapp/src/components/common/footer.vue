@@ -69,19 +69,19 @@ export default {
     }
     .in2{
       background-image: url("../../assets/footer/in.png");
-      background-position: 0 -43px;
+      background-position: 0 -0.43rem;
     }
     .in3{
       background-image: url("../../assets/footer/in.png");
-      background-position: 0 -91px;
+      background-position: 0 -0.91rem;
     }
     .in4{
       background-image: url("../../assets/footer/in.png");
-      background-position: 0 -136px;
+      background-position: 0 -1.35rem;
     }
     .in5{
       background-image: url("../../assets/footer/in.png");
-      background-position: 0 -180px;
+      background-position: 0 -1.8rem;
     }
 </style>
 

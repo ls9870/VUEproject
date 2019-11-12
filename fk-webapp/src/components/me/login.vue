@@ -1,19 +1,21 @@
 <template>
     <div class="login">
-        <Top></Top>
+      <Top></Top>
       <div class="in6 ">
           <div class="q1 name1">
-              <input type="text" name="name2" class="ma" value="请输入图片验证码"/>
-              <span ></span>
+              <input type="text" name="name2" class="ma"  placeholder="请输入图片验证码" v-model="user.usertuma"/>
+              <span >
+                <img :src="pic" @click="refreshpic">
+              </span>
           </div>
           <div class="q2 ">
-              <input type="text" name="name3" class="phone" value="请输入您的手机号"/>
+              <input type="text" name="name3" class="phone" placeholder="请输入手机验证码" v-model="user.userphonema" />
               <button type="button" class="btn2">获取动态密码</button>
           </div>
-          <input type="text" name="name4" class="name2" value="请输入手机验证码"/>
-          <input type="password" name="name4" class="name3" value="密码：6-16位字母，数字，特殊字符" /><span class="ico" @click="update" :style="image"></span>
+          <input type="text" name="name4" class="name2"  placeholder="请输入您的手机号" v-model="user.username1"/>
+          <input type="password" name="pwd" class="name3" placeholder="密码：6-16位字母，数字，特殊字符" v-model="user.userpass"/><span class="ico" @click="update" :style="image"></span>
           <div class="con">注册账号即表示同意遵守<a >《VANCL凡客服务条款》</a></div>
-          <button type="button" class="btn1">点击注册</button>
+          <button type="button" class="btn1" @click="btnzhuce">点击注册</button>
       </div>
     </div>
 </template>
@@ -23,10 +25,17 @@ import Top from './login/zhuce-header'
 export default {
     name: "login",
     components:{
-      Top
+      Top,
     },
     data(){
       return{
+        pic:"http://vueshop.glbuys.com/api/vcode/chkcode?token=1ec949a15fb709370f&nowtime=1312423435",
+        user:{
+          username1:"",
+          userpass:"",
+          usertuma:"",
+          userphonema:"",
+        },
         pic1:'http://47.94.86.251/凡客Vancl/assets/zhuce/1.jpg',
         pic2:'http://47.94.86.251/凡客Vancl/assets/zhuce/2.jpg',
         image:'background-image: url("http://47.94.86.251/凡客Vancl/assets/zhuce/1.jpg")'
@@ -35,7 +44,33 @@ export default {
     methods:{
       update(){
         this.image='background-image: url("http://47.94.86.251/凡客Vancl/assets/zhuce/2.jpg")'
-      }
+      },
+      //图片验证刷新
+      refreshpic () {
+        var sj = Math.ceil(Math.random() * 100000)
+        this.pic = "http://vueshop.glbuys.com/api/vcode/chkcode?token=1ec949a15fb709370f&nowtime=1312423435" + sj
+      },
+      //验证
+      btnzhuce(){
+        //必须加this
+        if( this.user.username1===""|| this.user.userpass===""|| this.user.usertuma===""|| this.user.userphonema===""){
+            alert('不能为空')
+         }
+        let myphone = /^1[0-9]{10}$/
+        if(!myphone.test(this.user.username1)){
+          alert('手机号码格式不正确');
+        }else{
+          localStorage.setItem('loginUserId',this.user.username1);
+        }
+        let mypwd = /^.{6,16}$/
+        if(!mypwd.test(this.user.userpass)){
+          alert('密码格式不正确');
+        }else{
+          localStorage.setItem('loginUserpwd',this.user.userpass);
+        }
+        if(this.user.username1 && this.user.userpass && this.user.usertuma && this.user.userphonema)
+          this.$router.push({path:'/me'})
+        }
     }
 }
 </script>
@@ -117,5 +152,9 @@ export default {
     background-size: cover;
     top: 2.04rem;
     right: 0.38rem;
+  }
+  .q1 img{
+    width: 0.8775rem;
+    height: 0.36rem;
   }
 </style>

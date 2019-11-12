@@ -2,7 +2,7 @@
     <div class="xinping">
       <div class="xp-tu1">
         <img src="../../assets/home/xinping/6.jpg"/>
-        <p v-for="n in mas" >{{n}}</p>
+        <p v-for="n in mas"  @click="en">{{n}}</p>
       </div>
 <!--      <a href="" >-->
         <swiper class='swiper-box' :options="swiperOption" ref="mySwiper" >
@@ -49,6 +49,11 @@ export default {
   computed: {
     swiper() {
       return this.$refs.mySwiper.swiper;
+    }
+  },
+  methods:{
+    en(){
+      this.$router.push({path:'/detail'})
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="lunbo">
+    <div class="lunbo" >
         <swiper class='swiper-box' :options="swiperOption" ref="mySwiper" >
 <!--          <div class="box">-->
             <swiper-slide><img src="../../assets/home/lunbo/1.jpg" class="swiper-img"></swiper-slide>
@@ -41,7 +41,7 @@ export default {
   },
   mounted () {
     this.swiper.slideTo(3, 1000, false)
-  }
+  },
 }
 </script>
 <style scoped>

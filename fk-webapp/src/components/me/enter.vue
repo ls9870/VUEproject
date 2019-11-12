@@ -7,26 +7,27 @@
       </div>
 <!--      普通-->
       <div class="in6" v-if="flage">
-          <input type="text" name="name1" class="name1" value="点击输入手机号"/>
-          <input type="password" name="pwd1" class="name2" value="请输入密码"/>
-          <button type="button" class="btn1"><span>登</span>&nbsp;录</button>
+          <input type="text" name="name1" class="name1" placeholder="点击输入手机号" v-model="myuser.phone1"/>
+          <input type="password" name="pwd1" class="name2" placeholder="请输入密码" v-model="myuser.pwd1"/>
+          <button type="button" class="btn1" @click="in1"><span>登</span>&nbsp;录</button>
           <Mefo></Mefo>
       </div>
 <!--快速-->
       <div class="in6 " v-else>
           <div class="q1 name1">
-              <input type="text" name="name2" class="ma" value="请输入图片验证码"/>
-              <span ></span>
+              <input type="text" name="name2" class="ma" placeholder="请输入图片验证码" v-model="myuser.ynum"/>
+              <span >
+                <img :src="pic" @click="refreshpic">
+              </span>
           </div>
           <div class="q2 ">
-              <input type="text" name="name3" class="phone" value="请输入您的手机号"/>
+              <input type="text" name="name3" class="phone" placeholder="请输入您的手机号" v-model="myuser.phone2"/>
               <button type="button" class="btn2">获取动态密码</button>
           </div>
-            <input type="password" name="name4" class="name2" value="请输入手机登录密码"/>
-            <button type="button" class="btn1"><span>登</span>&nbsp;录</button>
+            <input type="password" name="name4" class="name2" placeholder="请输入手机登录密码" v-model="myuser.pwd2"/>
+            <button type="button" class="btn1" @click="in2"><span>登</span>&nbsp;录</button>
           <Mefo></Mefo>
       </div>
-
     </div>
 </template>
 
@@ -38,7 +39,15 @@ export default {
       return{
         flage:true,
         color:'border-bottom: 0.03rem solid #B81B22',
-        colore:'border:none'
+        colore:'border:none',
+        pic:'http://vueshop.glbuys.com/api/vcode/chkcode?token=1ec949a15fb709370f&nowtime=1312423435',
+        myuser:{
+          phone2:"",
+          pwd2:"",
+          ynum:"",
+          phone1:"",
+          pwd1:""
+        },
       }
     },
     components:{
@@ -56,6 +65,36 @@ export default {
         this.colore=' border-bottom: 0.03rem solid #B81B22'
         this.color=' border-bottom: none'
       },
+      //验证码
+      refreshpic(){
+        var sj = Math.ceil(Math.random() * 100000)
+        this.pic = "http://vueshop.glbuys.com/api/vcode/chkcode?token=1ec949a15fb709370f&nowtime=1312423435" + sj
+      },
+      // 登录
+      in2(){
+        let id1 = localStorage.getItem("loginUserId")
+        let userpwd2 = localStorage.getItem("loginUserpwd")
+        if( this.myuser.ynum ===""||this.myuser.phone2 ===""|| this.myuser.pwd2 ==="" ){
+          alert('不能为空')
+        }
+        if(this.myuser.phone2 ===id1 && this.myuser.pwd2 === userpwd2 ){
+          this.$router.push({path:'/'})
+        }else{
+          alert('输入错误')
+        }
+      },
+      in1(){
+        let id1 = localStorage.getItem("loginUserId")
+        let userpwd2 = localStorage.getItem("loginUserpwd")
+        if( this.myuser.phone1 ===""|| this.myuser.pwd1 ==="" ){
+          alert('不能为空')
+        }
+        if(this.myuser.phone1 ===id1 && this.myuser.pwd1 === userpwd2 ){
+          this.$router.push({path:'/'})
+        }else{
+          alert('输入错误')
+        }
+      }
     }
 }
 </script>
@@ -139,5 +178,9 @@ export default {
     border: none;
     color: #757575;
     line-height: 0.22rem;
+  }
+  .q1 img{
+    width: 0.8775rem;
+    height: 0.36rem;
   }
 </style>

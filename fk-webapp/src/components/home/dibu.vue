@@ -2,10 +2,10 @@
     <div class="dibu">
         <div class="d1">
           <a href="">
-            <img src="../../assets/home/dibu/see-all.jpg">
+            <img :src="pic1">
           </a>
           <a href="#">
-            <img src="../../assets/home/dibu/ret-top.jpg">
+            <img :src="pic2">
           </a>
         </div>
         <div class="d2">
@@ -40,6 +40,13 @@
 <script>
 export default {
     name: "dibu",
+    data(){
+      return{
+        pic1:'http://47.94.86.251/Vancl//assets/home/dibu/see-all.jpg',
+        pic2:'http://47.94.86.251/Vancl//assets/home/dibu/ret-top.jpg',
+
+      }
+    },
     methods:{
       go1(){
         this.$router.push({path:'/Me'})

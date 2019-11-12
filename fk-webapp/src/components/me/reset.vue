@@ -3,17 +3,19 @@
        <Rtop></Rtop>
           <div class="in7">
               <div class="ma2">
-                <input type="text" name="ma2" value="请输入验证码"/>
-                <span></span>
+                <input type="text" name="ma2" placeholder="请输入验证码" v-model="user.usertuma2"/>
+                <span >
+                  <img :src="picimg" @click="refreshpic2">
+                </span>
               </div>
               <div class="phone2">
-                <input type="text" name="phone2" value="请输入您的手机号"/>
+                <input type="text" name="phone2" placeholder="请输入您的手机号" v-model="user.username2"/>
                 <span>获取短信验证码</span>
               </div>
-              <input type="text" name="duanma" value="请输入短信验证码验证码" class="duanma"/>
-              <input type="password" name="pwd" value="新密码：6-16位字母，数字，特殊字符" class="pwd"/>
-              <input type="password" name="opwd" value="请再次输入密码" class="opwd"/>
-              <button type="button" class="btn1"><span>提</span>&nbsp;交</button>
+              <input type="text" name="duanma" placeholder="请输入短信验证码验证码" class="duanma"/>
+              <input type="password" name="pwd" placeholder="新密码：6-16位字母，数字，特殊字符" class="pwd" v-model="user.userpass3"/>
+              <input type="password" name="opwd" placeholder="请再次输入密码" class="opwd" v-model="user.userpass2"/>
+              <button type="button" class="btn1" @click="btnsubmit"><span>提</span>&nbsp;交</button>
           </div>
     </div>
 </template>
@@ -24,6 +26,46 @@ export default {
     name: "reset",
     components:{
       Rtop
+    },
+    data(){
+      return{
+        picimg:"http://vueshop.glbuys.com/api/vcode/chkcode?token=1ec949a15fb709370f&nowtime=1312423435",
+        user:{
+          username2:"",
+          userpass2:"",
+          usertuma2:"",
+          userphonema2:"",
+          userpass3:""
+        }
+      }
+    },
+    methods:{
+      refreshpic2(){
+        var sj = Math.ceil(Math.random() * 100000)
+        this.picimg = "http://vueshop.glbuys.com/api/vcode/chkcode?token=1ec949a15fb709370f&nowtime=1312423435" + sj
+      },
+      btnsubmit(){
+        if( this.user.username2===""|| this.user.userpass2===""|| this.user.usertuma2===""||this.user.userpass3===""){
+          alert('不能为空')
+        }
+        let myphone = /^1[0-9]{10}$/
+        if(!myphone.test(this.user.username2)){
+          alert('手机号码格式不正确');
+        }else{
+          localStorage.setItem('loginUserId',this.user.username2);
+        }
+        let mypwd = /^.{6,16}$/
+        if(!mypwd.test(this.user.userpass3)&& !mypwd.test(this.user.userpass2)){
+          alert('密码格式不正确');
+        }else if(this.user.userpass3 === this.user.userpass2 ){
+          localStorage.setItem('loginUserpwd',this.user.userpass3);
+        }else{
+          alert('两次密码不一致');
+        }
+
+        if(this.user.username2 && this.user.userpass2 && this.user.usertuma2 && this.user.userpass3 &&this.user.userpass3 === this.user.userpass2)
+          {this.$router.push({path:'/me'})}
+      }
     }
 }
 </script>
@@ -89,5 +131,9 @@ export default {
   }
   .btn1 span{
     padding:0.08rem;
+  }
+  .ma2 img{
+    width: 0.8775rem;
+    height: 0.36rem;
   }
 </style>

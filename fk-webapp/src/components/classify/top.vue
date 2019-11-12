@@ -9,8 +9,8 @@
           <span :key="i" v-for= "(n,i) in list" @click="chg(i)" :class="{active:i === isActive}" >{{n}}</span>
         </div>
 <!--        //youbain右边-->
-          <MC ></MC>
-
+          <Tui v-show="isActive===0"></Tui>
+          <MC v-show="isActive===1"></MC>
       </div>
       <Footer></Footer>
     </div>
@@ -19,12 +19,14 @@
 <script>
 import Footer from '../common/footer'
 import MC from './mancloth'
+import Tui from './tuijian'
 
 export default {
     name: "top",
     components:{
       Footer,
-      MC
+      MC,
+      Tui
     },
    data(){
       return{

@@ -5,6 +5,8 @@ import Me from '../view/me'
 import Login from '../components/me/login.vue'
 import Reset from '../components/me/reset.vue'
 import Goshop from '../view/goshopping'
+import Detail from '../view/detail'
+import Catrs from '../view/Carts'
 
 import VueRouter  from 'vue-router'
 import Vue from 'vue'
@@ -12,7 +14,7 @@ import Vue from 'vue'
 Vue.use(VueRouter)
 
 export default new VueRouter({
-  mode:'history',
+  // mode:'history',
   routes:[
     {
       path:'/',
@@ -53,6 +55,18 @@ export default new VueRouter({
       path:'/goshopping',
       name:'Goshop',
       component: Goshop,
+      meta:{ keepAlive:true }
+    },
+    {
+      path:'/detail',
+      name:'Detail',
+      component:Detail,
+      meta:{ keepAlive:true }
+    },
+    {
+      path:'/catrs',
+      name:'Catrs',
+      component:Catrs,
       meta:{ keepAlive:true }
     }
   ]

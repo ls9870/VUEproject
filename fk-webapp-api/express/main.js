@@ -11,6 +11,6 @@ const app = express()
 
 app.use("/products",products)
 
-app.listen(3000,()=>{
+app.listen(3002,()=>{
     console.log("server is listening...")
 })

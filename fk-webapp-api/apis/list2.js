@@ -1,4 +1,4 @@
-const listclass =  `http://http://192.168.65.1:3000/products`
+const listclass =  `http://192.168.65.1:3002/products`
 
 export default{
     /**

@@ -2,7 +2,6 @@
   <div class="box-search">
     <div class="search">
       <a href="">
-<!--        <img src="../../assets/home/search2.jpg">-->
         <div class="ser"></div>
         <img :src="pic">
       </a>
