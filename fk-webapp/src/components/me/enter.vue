@@ -78,7 +78,8 @@ export default {
           alert('不能为空')
         }
         if(this.myuser.phone2 ===id1 && this.myuser.pwd2 === userpwd2 ){
-          this.$router.push({path:'/'})
+          alert('登录成功🐱‍🏍，请清空购物车吧！')
+          this.$router.push({path:'/goshopping'})
         }else{
           alert('输入错误')
         }
@@ -90,7 +91,8 @@ export default {
           alert('不能为空')
         }
         if(this.myuser.phone1 ===id1 && this.myuser.pwd1 === userpwd2 ){
-          this.$router.push({path:'/'})
+          alert('登录成功🐱‍🏍，请清空购物车吧！')
+          this.$router.push({path:'/goshopping'})
         }else{
           alert('输入错误')
         }
